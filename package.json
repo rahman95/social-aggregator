@@ -21,7 +21,10 @@
   "homepage": "https://github.com/rahman95/social-aggregator#readme",
   "dependencies": {
     "chalk": "^2.4.1",
-    "dotenv": "^6.0.0"
+    "dayjs": "^1.7.7",
+    "dotenv": "^6.0.0",
+    "node-instagram": "^4.2.0",
+    "twit": "^2.2.11"
   },
   "devDependencies": {
     "cross-env": "^5.2.0",
