@@ -1,5 +1,9 @@
-
-import {TwitterClient} from './twitter';
+import {TwitterClient} from './clients/twitter';
 
 const twitter = new TwitterClient();
-twitter.search();
+
+const tweets = twitter.search();
+
+tweets.then((response) => {
+  console.log(response.data);
+});
