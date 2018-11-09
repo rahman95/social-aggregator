@@ -1,12 +1,16 @@
-const Twit = require('twit');
-const dayjs = require('dayjs');
-require('dotenv').config();
+import Twit from 'twit';
+import dotenv from 'dotenv';
+import dayjs from 'dayjs';
 
-class Twitter {
+export class TwitterClient {
+  client: Twit
+
   constructor() {
+    dotenv.config();
+
     this.client = new Twit({
-      consumer_key: process.env.TWITTER_CONSUMER_KEY,
-      consumer_secret: process.env.TWITTER_CONSUMER_SECRET,
+      consumer_key: process.env.TWITTER_CONSUMER_KEY || '',
+      consumer_secret: process.env.TWITTER_CONSUMER_SECRET || '',
       access_token: process.env.TWITTER_ACCESS_TOKEN,
       access_token_secret: process.env.TWITTER_ACCESS_TOKEN_SECRET,
     });
@@ -21,5 +25,3 @@ class Twitter {
     });
   }
 }
-
-module.exports = Twitter;
